@@ -1,0 +1,137 @@
+.track-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: var(--z-overlay);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.track-content {
+  background: rgba(20, 20, 20, 0.97);
+  border-radius: 12px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 600px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+  h2 {
+    margin: 0 0 2rem;
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.track-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.track-item {
+  background: rgba(40, 40, 40, 0.9);
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  position: relative;
+
+  &.focused {
+    transform: scale(1.02);
+    background: rgba(60, 60, 60, 0.95);
+    box-shadow: 
+      0 0 0 3px var(--focus-color, #00b3ff),
+      0 5px 15px rgba(0, 179, 255, 0.2);
+  }
+
+  &.selected {
+    background: rgba(0, 100, 200, 0.4);
+    border: 1px solid rgba(0, 179, 255, 0.3);
+  }
+}
+
+.track-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.track-language {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.track-name {
+  font-size: 1.1rem;
+  color: #bbb;
+}
+
+.track-selected-icon {
+  color: var(--focus-color, #00b3ff);
+  font-size: 1.4rem;
+}
+
+.track-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+  .page-button {
+    background: rgba(40, 40, 40, 0.9);
+    border: none;
+    border-radius: 6px;
+    padding: 0.8rem 1.5rem;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-size: 1.2rem;
+
+    &.focused {
+      transform: scale(1.1);
+      background: rgba(60, 60, 60, 0.95);
+      box-shadow: 
+        0 0 0 3px var(--focus-color, #00b3ff),
+        0 5px 15px rgba(0, 179, 255, 0.2);
+    }
+
+    &.disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  }
+
+  .page-info {
+    color: #bbb;
+    font-size: 1.1rem;
+    min-width: 100px;
+    text-align: center;
+  }
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to { 
+    opacity: 1;
+    transform: scale(1);
+  }
+}

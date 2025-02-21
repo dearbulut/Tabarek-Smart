@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://tabarektv.com/TabarekTV" version="1.0.0">
+<widget xmlns="http://www.w3.org/ns/widgets" 
+        xmlns:tizen="http://tizen.org/ns/widgets" 
+        id="http://tabarektv.com/TabarekTV" 
+        version="1.0.0">
     <name>Tabarek TV</name>
     <name xml:lang="en-us">Tabarek TV</name>
     <description>Premium IPTV streaming application with support for live TV, movies, and series. Features include favorites, continue watching, and EPG data.</description>
     <description xml:lang="en-us">Premium IPTV streaming application with support for live TV, movies, and series. Features include favorites, continue watching, and EPG data.</description>
     <author href="http://tabarektv.com" email="support@tabarektv.com">Tabarek TV Development Team</author>
     <license>Copyright 2024 Tabarek TV</license>
-    <icon src="public/icon.png" height="170" width="170"/>
-    <icon src="public/images/icon_large.png" height="512" width="512"/>
-    <content src="public/index.html"/>
-    <access origin="*" subdomains="true"/>
-    <feature name="http://tizen.org/feature/screen.size.all"/>
-    <feature name="http://www.samsungdforum.com/feature/Keyboard"/>
-    <feature name="http://tizen.org/feature/tv.inputdevice"/>
-    <feature name="http://tizen.org/feature/network.wifi"/>
 
     <tizen:application id="AjJCDXpAzv.TabarekTV" package="AjJCDXpAzv" required_version="2.3"/>
     <tizen:profile name="tv-samsung"/>
@@ -22,6 +17,17 @@
     <tizen:required-version value="4.0"/>
     <tizen:required-display-size value="720"/>
     <tizen:app-category category="video"/>
+
+    <feature name="http://tizen.org/feature/screen.size.all"/>
+    <feature name="http://www.samsungdforum.com/feature/Keyboard"/>
+    <feature name="http://tizen.org/feature/tv.inputdevice"/>
+    <feature name="http://tizen.org/feature/network.wifi"/>
+    
+    <icon src="public/icon.png" height="170" width="170"/>
+    <icon src="public/images/icon_large.png" height="512" width="512"/>
+    <content src="public/index.html"/>
+    
+    <access origin="*" subdomains="true"/>
     
     <tizen:privilege name="http://tizen.org/privilege/internet"/>
     <tizen:privilege name="http://developer.samsung.com/privilege/widgetdata"/>
@@ -31,8 +37,6 @@
     <tizen:privilege name="http://developer.samsung.com/privilege/avplay"/>
     <tizen:privilege name="http://developer.samsung.com/privilege/productinfo"/>
     <tizen:privilege name="http://tizen.org/privilege/tv.inputdevice"/>
-
-    <tizen:splash src="public/images/splash.png" width="1920" height="1080"/>
 
     <tizen:app-control>
         <tizen:src name="public/index.html"/>

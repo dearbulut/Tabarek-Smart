@@ -1,0 +1,170 @@
+.main-navigation {
+    width: 280px;
+    height: 100vh;
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 40px 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+
+    .app-logo {
+        padding: 0 40px;
+        margin-bottom: 60px;
+
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 0;
+            
+            span {
+                color: #007AFF;
+            }
+        }
+    }
+
+    .menu-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        .menu-item {
+            padding: 16px 40px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+
+            &:hover, &.focused {
+                background: rgba(255, 255, 255, 0.1);
+
+                .menu-icon {
+                    color: #007AFF;
+                    transform: scale(1.1);
+                }
+
+                .menu-text {
+                    color: #ffffff;
+                    transform: translateX(4px);
+                }
+            }
+
+            &.active {
+                background: rgba(0, 122, 255, 0.15);
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    width: 4px;
+                    background: #007AFF;
+                }
+
+                .menu-icon, .menu-text {
+                    color: #007AFF;
+                }
+            }
+
+            &.focused {
+                background: rgba(0, 122, 255, 0.2);
+                
+                &::after {
+                    content: '';
+                    position: absolute;
+                    inset: 0;
+                    border: 2px solid #007AFF;
+                    pointer-events: none;
+                }
+            }
+
+            .menu-content {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+            }
+
+            .menu-icon {
+                font-size: 20px;
+                color: rgba(255, 255, 255, 0.7);
+                transition: all 0.2s ease;
+                width: 24px;
+                text-align: center;
+            }
+
+            .menu-text {
+                font-size: 16px;
+                font-weight: 500;
+                color: rgba(255, 255, 255, 0.7);
+                transition: all 0.2s ease;
+            }
+        }
+    }
+}
+
+// 4K TV Resolution
+@media screen and (min-width: 1920px) {
+    .main-navigation {
+        width: 320px;
+        padding: 48px 0;
+
+        .app-logo {
+            padding: 0 48px;
+            margin-bottom: 72px;
+
+            h1 {
+                font-size: 28px;
+            }
+        }
+
+        .menu-list .menu-item {
+            padding: 20px 48px;
+
+            .menu-icon {
+                font-size: 24px;
+                width: 28px;
+            }
+
+            .menu-text {
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+// 8K TV Resolution
+@media screen and (min-width: 3840px) {
+    .main-navigation {
+        width: 400px;
+        padding: 64px 0;
+
+        .app-logo {
+            padding: 0 64px;
+            margin-bottom: 96px;
+
+            h1 {
+                font-size: 36px;
+            }
+        }
+
+        .menu-list .menu-item {
+            padding: 24px 64px;
+
+            .menu-icon {
+                font-size: 32px;
+                width: 36px;
+            }
+
+            .menu-text {
+                font-size: 24px;
+            }
+
+            &.focused::after {
+                border-width: 3px;
+            }
+        }
+    }
+}
